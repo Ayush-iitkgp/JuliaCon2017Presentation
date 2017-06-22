@@ -11909,8 +11909,8 @@ a.anchor-link {
 </ul>
 <p><img src="Power_Network.png" alt="An example of a power network"></p>
 <ul>
-<li><strong>Knowns: </strong> - Voltages angle and magnitude information for each bus</li>
-<li><strong>Unknowns: </strong> - Load( such as appliances and lights.) and generator real power and voltage condition.<!-- An electrical load is an electrical component or portion of a circuit that consumes (active) electric power. --></li>
+<li><strong>Unknowns: </strong> - Voltages angle and magnitude information for each bus</li>
+<li><strong>Knowns: </strong> - Load( such as appliances and lights.) and generator real power and voltage condition.<!-- An electrical load is an electrical component or portion of a circuit that consumes (active) electric power. --></li>
 </ul>
 
 </div>
@@ -11931,9 +11931,10 @@ a.anchor-link {
 <h4 id="Constraints">Constraints<a class="anchor-link" href="#Constraints">&#194;&#182;</a></h4><p><img src="Power_Network_2.png" alt="Each transmission line has four flows"></p>
 <ul>
 <li>$p_{ij}$: Active power entering the line from node i</li>
+<li>$q_{ij}$: Reactive power entering the line from node i</li>
 <li>Let $x_{i}$ denote the complex voltage for node i of the network. </li>
 </ul>
-<p>We have the following power balance equations which are <strong>non-linear</strong> in unknown x.</p>
+<p>We have the following power balance equations which are <strong>non-linear</strong> in unknown $x_{i}$ and $x_{j}$.</p>
 <p><img src="Power_Network_3.png" alt="Power balance equations"></p>
 
 </div>
@@ -11943,7 +11944,8 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Objective">Objective<a class="anchor-link" href="#Objective">&#194;&#182;</a></h4><ul>
+<h4 id="Objective">Objective<a class="anchor-link" href="#Objective">&#194;&#182;</a></h4><p>Depends on the business needs such as:</p>
+<ul>
 <li>Minimize power losses in an electrical network</li>
 <li>Minimize cost of generation</li>
 </ul>
@@ -11957,8 +11959,8 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Optimal-Power-Flow---SDP-Relaxation">Optimal Power Flow - SDP Relaxation<a class="anchor-link" href="#Optimal-Power-Flow---SDP-Relaxation">&#194;&#182;</a></h3><ul>
 <li>The original optimal power flow problem is non-convex in nature.</li>
-<li>Thaks to the <strong>lifting technique</strong> which converts the above optimization problem to a SemiDefinite Programming Problem.</li>
-<li>The relaxed SDP problem finds the near global solution of the original non-convex problem.</li>
+<li>Thanks to the <a href="https://www.informs.org/content/download/320453/3031884/version/2/file/OStoday2016.pdf"><strong>lifting technique</strong></a> which converts the above optimization problem to a SemiDefinite Programming Problem.</li>
+<li>The relaxed SDP problem finds the <strong>near global solution</strong> of the original non-convex problem.</li>
 </ul>
 
 </div>
